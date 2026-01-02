@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'routes.dart';
+import 'core/theme.dart';
 
 void main() {
   runApp(const MainApp());
@@ -9,12 +11,12 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: Scaffold(
-        body: Center(
-          child: Text('Hello World!'),
-        ),
-      ),
+    return MaterialApp.router(
+      title: 'Remi Portfolio',
+      theme: AppTheme.darkTheme, // Default to dark as per design
+      themeMode: ThemeMode.dark, // Enforce dark for now
+      routerConfig: router,
+      debugShowCheckedModeBanner: false,
     );
   }
 }
